@@ -19,7 +19,7 @@ if st.button("Generate Code"):
     with st.spinner("Generating code..."):
         response = together.Complete.create(
             prompt=prompt,
-            model="mistralai/Mistral-7B-Instruct-v0.2",  # ✅ working model!
+            model="mistralai/Mistral-7B-Instruct-v0.2",  # ✅ This one works!
             max_tokens=256,
             temperature=0.7,
             top_k=50,
@@ -27,5 +27,6 @@ if st.button("Generate Code"):
             repetition_penalty=1.1,
             stop=["</s>"]
         )
-        generated_code = response['output'].strip()
+        # 🛠️ New: extract the generated text properly
+        generated_code = response['choices'][0]['text'].strip()
         st.code(generated_code, language="python")
