@@ -19,7 +19,7 @@ if st.button("Generate Code"):
     with st.spinner("Generating code..."):
         response = together.Complete.create(
             prompt=prompt,
-            model="meta-llama/Meta-Llama-3-8B-Instruct",  # ✅ this one works!
+            model="mistralai/Mistral-7B-Instruct-v0.2",  # ✅ working model!
             max_tokens=256,
             temperature=0.7,
             top_k=50,
