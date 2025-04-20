@@ -19,7 +19,7 @@ if st.button("Generate Code"):
     with st.spinner("Generating code..."):
         response = together.Complete.create(
             prompt=prompt,
-            model="codellama/CodeLlama-13b-Instruct-hf",  # updated model name
+            model="togethercomputer/CodeLlama-7b-Instruct",  # ✅ working model
             max_tokens=256,
             temperature=0.7,
             top_k=50,
