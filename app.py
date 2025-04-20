@@ -23,3 +23,9 @@ if st.button("Generate Code"):
             max_tokens=256,
             temperature=0.7,
             top_k=50,
+            top_p=0.95,
+            repetition_penalty=1.1,
+            stop=["</s>"]
+        )
+        generated_code = response['output'].strip()
+        st.code(generated_code, language="python")
