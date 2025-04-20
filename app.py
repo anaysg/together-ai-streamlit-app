@@ -17,15 +17,15 @@ prompt = st.text_area("📝 Prompt", "Write a Python script to reverse a string.
 # Button
 if st.button("Generate Code"):
     with st.spinner("Generating code..."):
-        response = together.Complete.create(
-            prompt=prompt,
-            model="togethercomputer/CodeLlama-13b-Instruct",
-            max_tokens=256,
-            temperature=0.7,
-            top_k=50,
-            top_p=0.95,
-            repetition_penalty=1.1,
-            stop=["</s>"]
-        )
+     response = together.Complete.create(
+    prompt=prompt,
+    model="codellama/CodeLlama-13b-Instruct-hf",  # updated model name
+    max_tokens=256,
+    temperature=0.7,
+    top_k=50,
+    top_p=0.95,
+    repetition_penalty=1.1,
+    stop=["</s>"]
+)
         generated_code = response['output'].strip()
         st.code(generated_code, language="python")
