@@ -19,7 +19,7 @@ if st.button("Generate Code"):
     with st.spinner("Generating code..."):
         response = together.Complete.create(
             prompt=prompt,
-            model="togethercomputer/CodeLlama-7b-Instruct",  # ✅ working model
+            model="Qwen/Qwen1.5-7B-Chat",  # ✅ works with serverless
             max_tokens=256,
             temperature=0.7,
             top_k=50,
